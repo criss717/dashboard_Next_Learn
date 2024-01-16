@@ -9,6 +9,7 @@ import {
 } from '@heroicons/react/24/outline';
 import Link from 'next/link';
 import { Button } from '@/app/ui/button';
+import { editeInvoices } from '@/app/lib/actions';
 
 export default function EditInvoiceForm({
   invoice,
@@ -16,9 +17,12 @@ export default function EditInvoiceForm({
 }: {
   invoice: InvoiceForm;
   customers: CustomerField[];
-}) {
+}) {  
+  
+  
+  const updateInvoiceWithId = editeInvoices.bind(null,invoice.id);
   return (
-    <form>
+    <form action={updateInvoiceWithId} >//automaticamente React usa el acton para invocar una action function y envía los datos capturados en el form a traves de un FormData
       <div className="rounded-md bg-gray-50 p-4 md:p-6">
         {/* Customer Name */}
         <div className="mb-4">

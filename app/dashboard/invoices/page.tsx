@@ -8,7 +8,7 @@ import { Suspense } from 'react';
 import { fetchInvoicesPages } from '@/app/lib/data';
 
 export default async function Page({
-  searchParams, // los serve components aceptan un parametro llamado sarchParams
+  searchParams, // los server components aceptan un parametro llamado searchParams
 }: {
   searchParams?: {
     query?: string,
